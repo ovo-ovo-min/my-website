@@ -1,0 +1,82 @@
+---
+# ═══════════════════════════════════════════════════
+# 带代码块的长文示例 — 展示 JSON、PowerShell 等多种语言高亮
+# ═══════════════════════════════════════════════════
+
+title: "我的开发环境配置"
+description: "分享我日常使用的开发工具和环境配置，包括编辑器、终端、版本管理等。"
+date: "2026-06-20"
+tags: ["工具", "效率", "工作流"]
+category: "技术"
+published: true
+---
+
+## 开发工具
+
+### VS Code
+
+Visual Studio Code 是我日常使用的编辑器。以下是我常用的配置和插件：
+
+**主题相关：**
+
+```json
+{
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.6
+}
+```
+
+**常用扩展：**
+
+1. **ESLint** —— 代码规范检查
+2. **Prettier** —— 代码格式化
+3. **Tailwind CSS IntelliSense** —— Tailwind 类名补全
+4. **GitLens** —— Git 历史可视化
+5. **Error Lens** —— 内联错误提示
+
+### 终端
+
+使用 Windows Terminal 搭配 PowerShell 7：
+
+```powershell
+# oh-my-posh 主题配置
+oh-my-posh init pwsh --config ~/theme.json | Invoke-Expression
+```
+
+## 工作流
+
+### Git 提交规范
+
+我采用 Conventional Commits 规范：
+
+```
+feat: 新功能
+fix: 修复 Bug
+refactor: 重构
+docs: 文档更新
+style: 样式修改
+chore: 其他杂项
+```
+
+### 开发流程
+
+1. 从 `main` 分支创建 feature 分支
+2. 在 feature 分支上开发
+3. 提交时遵循提交规范
+4. 创建 Pull Request
+5. Code Review 后合并
+
+## 效率工具
+
+除了编辑器和终端，还有一些工具大大提升了我的工作效率：
+
+- **Figma** —— 设计协作
+- **Linear** —— 项目管理
+- **Raycast** —— 快捷启动
+- **Arc Browser** —— 浏览器
+
+## 写在最后
+
+开发工具和工作流是很个人化的事情，适合自己的才是最好的。重要的是不断尝试和优化，找到最适合自己的工作方式。

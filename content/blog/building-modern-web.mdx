@@ -1,0 +1,91 @@
+---
+# ═══════════════════════════════════════════════════
+# 技术类文章示例 — 包含代码块、引用、列表等丰富格式
+# 代码块会自动支持语法高亮和复制按钮
+# ═══════════════════════════════════════════════════
+
+title: "现代 Web 应用构建实践"
+description: "探讨使用 Next.js App Router、TypeScript 和 Tailwind CSS 构建现代 Web 应用的架构思路和最佳实践。"
+date: "2026-06-15"
+tags: ["Next.js", "TypeScript", "架构"]
+category: "技术"
+published: true
+---
+
+## 前言
+
+随着 Web 技术的发展，前端工程化的复杂度也在不断增长。如何构建一个既高效又可维护的现代 Web 应用，是每个开发者都需要思考的问题。
+
+## 技术选型
+
+### Next.js App Router
+
+Next.js 的 App Router 带来了全新的路由模型：
+
+```tsx
+// app/blog/[slug]/page.tsx
+export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const post = await getPost(params.slug)
+  return <article>{post.content}</article>
+}
+```
+
+**核心优势：**
+
+- 服务端组件默认，减少客户端 JavaScript
+- 嵌套布局和模板
+- Streaming 和 Suspense 支持
+
+### TypeScript 类型安全
+
+```typescript
+interface Post {
+  title: string
+  content: string
+  tags: string[]
+  published: boolean
+}
+
+function formatPost(post: Post): string {
+  // 类型系统保障你不会误用
+  return post.title
+}
+```
+
+### Tailwind CSS 设计系统
+
+使用 Tailwind 配合 CSS 变量构建设计 token，实现主题切换：
+
+```css
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #1d1d1f;
+}
+
+.dark {
+  --bg-primary: #000000;
+  --text-primary: #f5f5f7;
+}
+```
+
+## 架构设计
+
+### 分层架构
+
+```
+pages/      → 路由层（数据获取 + 页面组装）
+components/ → UI 层（纯展示组件）
+lib/        → 逻辑层（数据处理）
+data/       → 数据层（静态数据）
+```
+
+### 性能优化
+
+- 图片使用 `next/image` 自动优化
+- 静态页面增量生成（ISR）
+- 使用 `next/font` 优化字体加载
+- 组件按需加载和代码分割
+
+## 总结
+
+现代 Web 开发不仅仅是选择框架，更重要的是建立清晰的项目架构和工程规范。好的架构能让团队协作更高效，代码维护更轻松。

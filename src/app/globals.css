@@ -1,0 +1,71 @@
+﻿@import "tailwindcss";
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f7;
+  --bg-tertiary: #e8e8ed;
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #86868b;
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --border: #d2d2d7;
+  --overlay: rgba(0, 0, 0, 0.04);
+}
+
+.dark {
+  --bg-primary: #000000;
+  --bg-secondary: #1d1d1f;
+  --bg-tertiary: #2d2d2f;
+  --text-primary: #f5f5f7;
+  --text-secondary: #86868b;
+  --text-tertiary: #6e6e73;
+  --accent: #2997ff;
+  --accent-hover: #40a9ff;
+  --border: #424245;
+  --overlay: rgba(255, 255, 255, 0.08);
+}
+
+@theme inline {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-border: var(--border);
+  --color-overlay: var(--overlay);
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  --animate-scroll-arrow: scroll-arrow 2s ease-in-out infinite;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.prose { max-width: 65ch; line-height: 1.75; }
+.prose h2 { font-size: 1.5rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.025em; color: var(--text-primary); }
+.prose h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--text-primary); }
+.prose p { margin-bottom: 1.25rem; color: var(--text-secondary); }
+.prose a { color: var(--accent); transition: color 0.2s; }
+.prose a:hover { color: var(--accent-hover); }
+.prose ul, .prose ol { margin-bottom: 1.25rem; padding-left: 1.5rem; color: var(--text-secondary); }
+.prose li { margin-bottom: 0.5rem; }
+.prose blockquote { border-left: 3px solid var(--border); padding-left: 1rem; margin: 1.5rem 0; color: var(--text-tertiary); font-style: italic; }
+.prose img { border-radius: 12px; margin: 1.5rem 0; }
+.prose pre { border-radius: 12px; padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0; background: #1d1d1f !important; font-size: 0.875rem; line-height: 1.6; }
+.dark .prose pre { background: #2d2d2f !important; }
+.prose code { font-family: var(--font-mono); font-size: 0.875em; }
+.prose :not(pre) > code { background: var(--bg-secondary); padding: 0.2em 0.4em; border-radius: 4px; color: var(--text-primary); }
+.prose hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::selection { background: var(--accent); color: #ffffff; }
