@@ -11,7 +11,7 @@ export const siteConfig: SiteConfig = {
   subtitle: '狗屎开发者 / 道观爱好者 / 热爱创造',
 
   // --- 联系信息 ---
-  email: '12345678@qq.com',
+  email: '123456789@qq.com',
   avatar: '/images/516e8dcf75ebcc7818e500636d5e432b.jpg',
 
   // --- 位置 & 状态 ---
